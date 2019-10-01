@@ -41,4 +41,4 @@ Now lets let hydra try to break the password for us, it needs time since it is a
 
 There is so much that hydra could do, since in this tutorial we just learned how to bruteforce web based logon using hydra, we only learn one protocol, that is http-post-form protocol. We can also use hydra against another protocol such ssh, ftp, telnet, VNC, proxy, etc.
 
-Note :- See attached files and Screemshots.
+Note :- See attached files and Screenshots.
